@@ -1,0 +1,34 @@
+<table width="80%" class="table">
+   <tr>
+    <td>
+	  Hallo &nbsp;<b>{NAME}</b>
+		<br />
+		<br />
+		{NACHRICHTEN}
+	  <a class="box" href="index.php?user-3">{_lang_logout}</a> | <a class="box" href="index.php?user-8">{_lang_profil}</a>
+		<br>
+		{ADMIN}
+
+		</td>
+  </tr>
+</table>
+{EXPLODE}
+<div style="width:80%;text-align:center;margin-left:10px;">
+<form method="POST" class="form-horizontal"  role="form">
+<div class="input-group">
+  <span class="input-group-addon"><i class="fa fa-user"></i></span>
+  <input type="text" name="name" onFocus="if (value == '{NAME}') {value = ''}" onBlur="if (value == '') {value = '{NAME}'}" value="{NAME}" class="form-control">
+</div>
+<div class="input-group">
+  <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+  <input type="password" name="pass" onFocus="if (value == '{PASS}') {value = ''}" onBlur="if (value == '') {value = '{PASS}'}" value="{PASS}" class="form-control">
+</div>
+<input type="hidden" name="wdlink" value="{wdlink}" />
+<div style="float:left;">
+<input class="btn btn-primary" type="submit" name="user_login_sub" value="Login">{regist}
+
+</form>
+</div></div>
+
+
+

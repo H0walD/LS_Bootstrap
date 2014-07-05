@@ -1,0 +1,61 @@
+<table width="100%" class="table  table-bordered">
+  <tr>
+	  <th colspan="2" height="20">
+		  <b>{_lang_preview}</b>
+		</th>
+	</tr><tr>
+    <td >{txt}</td>
+  </tr>
+</table>
+<br><br>
+{EXPLODE}
+<script language="JavaScript" type="text/javascript">
+<!--
+  function form_check() {
+	  document.form.submit.disabled = true;
+ 	  document.form.submit.style.background = '#FF0000';
+    document.form.submit.value = '{_lang_send}...';
+    return true;
+	}
+//-->
+</script>
+
+<form action="index.php?forum-editpost-{tid}-{oid}" method="POST" name="form" onSubmit="return form_check()" class="form-horizontal" role="form">
+<script type="text/javascript" src="include/includes/js/bbcode.js"></script>
+
+<table width="100%" class="table  table-bordered">
+  <tr>
+	  <th colspan="2" height="20">
+		  <b>{_lang_editthispost}</b>
+		</th>
+	</tr><tr>
+	  <td colspan="2" height="20">
+		  <b>{_lang_edityoutpost}</td>
+		</td>
+	</tr><tr>
+	  <td  valign="top" rowspan="2" class="active hidden-xsmin">{SMILIES}</td>
+	  <td >
+      <!-- BB Code START -->
+	  {__BBCodeButtons__}
+		 <!-- BB Code ENDE -->
+		</td>
+	</tr><tr>
+    <td width="80%"> 
+		  <textarea style="width: 98%" name="txt" rows="15" cols="50" class="form-control" tabindex="2">{txt}</textarea>
+    </td>
+  </tr>
+</tr></table>
+<table width="100%" class="table"><tr>
+    <td class="text-right"><input type="submit" class="btn btn-primary btn-sm" name="priview" value="{_lang_preview}" accesskey='v' />&nbsp;<input type="submit" class="btn btn-primary btn-sm" name="submit" value="{_lang_formsub}" accesskey='s' /></td>
+  </tr>
+</table>
+</form>
+<br>
+<b>{_lang_overvieaboutthelast5posts}</b>
+<table width="100%" class="table  table-bordered table-condensed">
+  {EXPLODE}
+	<tr>
+	  <td valign="top" width="20%">{erst}</td>
+    <td>{txt}</td>
+	</tr>{EXPLODE}
+</table>

@@ -1,0 +1,22 @@
+<form action="index.php?forum-editforum-{id}" method="POST">
+{antispam}
+<table width="100%" class="table  table-bordered table-hover">
+	  <tr class="active">
+		  <th><b>{_lang_topic}</b></td>
+      <th class="text-center"><b>{_lang_update}</b></td>
+      <th></th>
+    </tr>
+{EXPLODE}
+  <tr>
+    <td ><a href="index.php?forum-showposts-{id}">{name}</a> <span class="badge" rel="tooltip" data-placement="top" title="{_lang_answers}">{rep}</span><br>
+    <span style="font-size:0.875em;">{_lang_author}: {erst}</span></td>
+		<td class="text-center">{date}</td>
+    <td ><input type="checkbox" name="in[{id}]" value="yes" /></td>
+  </tr>
+{EXPLODE}
+</table>
+<input class="btn btn-primary btn-xs" type="submit" name="del" value="{_lang_delete}" />
+<input class="btn btn-primary btn-xs" type="submit" name="shift" value="{_lang_shift}" />
+<input class="btn btn-primary btn-xs" type="submit" name="status" value="{_lang_status} {_lang_change}" />
+</form>
+{MPL}

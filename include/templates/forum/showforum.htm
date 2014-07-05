@@ -1,0 +1,50 @@
+<table width="100%" class="table  table-bordered table-hover">
+{EXPLODE}
+<tr class="active">
+	  <td colspan="5"><b><i class="fa fa-angle-double-down"></i> <a href="index.php?forum-showcat-{cid}">{cname}</a></b></td>
+{EXPLODE}<tr>
+	  <td colspan="5"><b>&raquo;&nbsp;<a href="index.php?forum-showcat-{cid}">{cname}</a></b></td>
+	</tr>{EXPLODE}<tr>
+	  <td style="min-width:20px;max-width:20px;padding:2px;vertical-align: middle;text-align:center;"><img alt="" src="include/images/forum/{ORD}.gif" style="min-width:15px;" border="0"></td>
+    <td>
+		  <a href="index.php?forum-showtopics-{id}">{name}</a>
+		  <br />
+			<span style="font-size:0.875em;">{besch}
+			{mods}
+      </span>
+		</td>
+    <td class="text-center hidden-xsmin" style="font-size:0.875em;">{topics}-Themen<br>{posts}-Beitr&auml;ge</td>
+    <td>
+		  <span>
+				<a  rel="tooltip" title="{topicl}" href="index.php?forum-showposts-{tid}-p{page}#{pid}">{topic}</a>
+		    <br>
+			  <span style="font-size:0.875em;">{_lang_from}: {erst}</span>
+		  </span>
+		</td>
+  </tr>{EXPLODE}
+</table>
+<div class="panel panel-default">
+  <div class="panel-body">
+<img src="include/images/forum/nord.gif" alt="neue Beitr&auml;ge" rel="tooltip" title="{_lang_newposts}" border="0">&nbsp;&nbsp;
+<img src="include/images/forum/ord.gif" alt="keine neuen Beitr&auml;ge" rel="tooltip" title="{_lang_nonewposts}" border="0">&nbsp;&nbsp;
+<img src="include/images/forum/cord.gif" alt="Thema geschlossen" rel="tooltip" title="{_lang_topicclosed}" border="0">
+<span style="float:right">
+<a href="index.php?forum-markallasread" rel="tooltip" title="{_lang_markallasread}"><i class="fa fa-times"></i></a>&nbsp;&nbsp;
+<a href="index.php?forum-augt" rel="tooltip" title="{_lang_newtopicssincelastvisit}"><i class="fa fa-comments-o"></i></a>&nbsp;&nbsp;
+<a href="index.php?forum-aubt" rel="tooltip" title="{_lang_topicwithnoreply}"><i class="fa fa-comment-o"></i></a>&nbsp;&nbsp;
+<a href="index.php?forum-aeit" rel="tooltip" title="{_lang_ownposts}"><i class="fa fa-user"></i></a>&nbsp;</span>
+  </div>
+</div>
+<div class="panel panel-default">
+  <div class="panel-body text-left">
+		  <td class="erstezeile"><span class="badge">{gesonline}</span> {_lang_guestsonline,ofthem} <span class="badge">{useronline}</span> {_if_{useronline}=='1'}{_lang_registredand}{/_endif}{_if_{useronline}!='1'}{_lang_registrededand}{/_endif} <span class="badge">{gastonline}</span> {_lang_guests}<br>
+			<br>{userliste}
+<br><br>
+<legend>{_lang_forumselect}</legend><br>
+{_lang_membershaveritten} <span class="badge">{users}</span>&nbsp;&nbsp;
+{_lang_postsin} <span class="badge">{posts}</span>&nbsp;&nbsp;
+{_lang_topics} <span class="badge">{topics}</span>
+  </div>
+</div>
+
+{privmsgpopup}
