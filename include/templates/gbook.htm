@@ -1,0 +1,173 @@
+  <table width="100%">
+	  <tr>
+		  <td width="50%" class="text-left">
+			  <span class="btn btn-primary">{_lang_entries} <span class="badge">{EINTRAGE}</span>
+			</td>
+		  <td width="50%" class="text-right">
+			  <a class="btn btn-primary" href="index.php?gbook-1">{_lang_insert}</a>
+			</td>
+		</tr>
+	 </table>
+	
+	<br>
+{EXPLODE}
+
+<table class="table table-bordered table-hover">
+	<tr class="active">
+	    <td><b>{NAME}</b><span style="float:right;">
+<div class="btn-group">
+  <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+    <i class="fa fa-bars"></i> <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu pull-right text-center" role="menu">
+    <li><a href="#">Eintrag vom:<br>{DATE}</a></li>
+    <li>{MAIL}</li>
+    <li>{PAGE}</li>
+    <li>{koms}</li>
+  </ul>
+</div>
+</span></td>
+ 	</tr>
+	<tr>
+		  <td colspan="3">{TEXT}</td>
+	</tr>
+</table>
+<br />
+{EXPLODE}
+
+
+<br />
+<br />
+
+<div align="center">{SITELINK}</div>
+
+{EXPLODE}
+
+<!-- G &auml; S T E B U C H   E N T E R   F O R M U L A R -->
+
+
+<script language="JavaScript" type="text/javascript">
+<!--
+  
+	var ErlaubteAnzahl={TXTL};
+	
+	
+	function checkg ( ) {
+	  if ( document.form.txt.value.length > ErlaubteAnzahl ) {
+		  alert('Du hast mehr als ' + ErlaubteAnzahl + ' Zeichen verwendet');
+			return false;
+		} else {
+		  var fehler = '';
+			if ( document.form.txt.value.length == 0 ) {
+			  fehler += 'Bitte einen Text eingeben';
+			}
+			if ( document.form.name.value.length == 0 ) {
+			  if ( fehler != '' ) {
+				  fehler += "\n";
+				}
+				fehler += 'Bitte einen Namen eingeben';
+			}
+			if ( fehler != '' ) {
+			  alert ( fehler );
+				return false;
+			} else {
+			  return true;
+			}
+		}
+	}
+
+function RestlicheZeichenErmitteln(d)
+{
+	Laenge=document.form.txt.value.length;
+	if(Laenge>ErlaubteAnzahl)
+	{
+		document.form.txt.value=document.form.txt.value.substring(0,ErlaubteAnzahl);
+		RestlicheZeichen=0;
+	}
+	else
+	{
+		RestlicheZeichen=ErlaubteAnzahl-Laenge;
+	}
+	document.form.Laenge.value=RestlicheZeichen;
+}
+
+//-->
+</script>
+
+<script type='text/javascript' src='include/includes/js/bbcode.js'></script>
+<form action="index.php?gbook-2" onsubmit="return checkg()" method="POST" name="form">
+<legend>{_lang_insert}</legend>
+<table  class="table  table-bordered table-hover table-striped">
+  <tr><td>
+<div class="input-group">
+  <span class="input-group-addon"><i class="fa fa-male"></i></span>
+  <input type="text" value="{uname}" tabindex="1" name="name" class="form-control" placeholder="Name">
+</div>
+<div class="input-group">
+  <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+  <input type="text" name="mail"  tabindex="2" class="form-control" placeholder="E-Mail">
+</div>
+<div class="input-group">
+  <span class="input-group-addon"><i class="fa fa-home"></i></span>
+  <input type="text" name="page" tabindex="3" class="form-control" placeholder="Webseite">
+</div>
+</td>
+	</tr></table>
+    <table class="table  table-bordered table-hover table-striped">
+<tr>
+  <td width="15%" class="active hidden-xsmin" valign="top"><b>{_lang_message}</b><br><br>{SMILIES}</td>
+        <td width="85%">
+      <!-- BB Code START -->{__BBCodeButtons__}<!-- BB Code START -->
+<br>
+  <textarea class="form-control" placeholder="Dein Eintrag" onblur="RestlicheZeichenErmitteln(this);" onchange="RestlicheZeichenErmitteln(this);" onfocus="RestlicheZeichenErmitteln(this);" onkeydown="RestlicheZeichenErmitteln(this);" onkeyup="RestlicheZeichenErmitteln(this);" cols="50" rows="10" tabindex="4" name="txt"></textarea><br>Noch <input size="3" name="Laenge" value="{TXTL}"> {_lang_signs}
+</td>
+      </tr>
+    </table></td>
+	</tr>{ANTISPAM}<tr>
+  <td></td><td><input type="submit" class="btn btn-primary" value="{_lang_formsub}" tabindex="5" accesskey="s"></td>
+	</tr></table></form>
+
+{EXPLODE}
+<table class="table table-bordered">
+	<tr class="active">
+	    <td><b>{name}</b><span style="float:right;">
+<div class="btn-group">
+  <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+    <i class="fa fa-bars"></i> <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu  pull-right text-center" role="menu">
+    <li>{datum}</li>
+    <li>{mail}</li> 
+    <li>{page}</li>
+  </ul>
+</div>
+</td>
+ 	</tr>
+	<tr>
+		  <td colspan="3">{text}</td>
+	</tr>
+</table>
+<br />
+<table class="table table-bordered table-hover">
+	<tr class="active">
+    <td>
+	    <form action="index.php?gbook-show-{id}" method="POST">
+        <fieldset>
+          <legend>{_lang_writecomment}</legend>
+<div class="row">
+  <div class="col-lg-4">
+          <input type="text" class="form-control" name="name" value="{uname}" readonly> &nbsp; {ANTISPAM} &nbsp;</div></div>
+          <textarea class="form-control" rows="3" name="text" placeholder="Kommentar eingeben"></textarea><br>
+          <input type="submit" class="btn btn-primary text-left" value="{_lang_enter}">
+        </fieldset>
+      </form>
+      <br />
+      {EXPLODE}
+     <div class="well well-sm">
+      <span class="badge"># {zahl}</span> von {name}<br>
+      {text}</div>
+      
+      {EXPLODE}
+    </td>
+  </tr>
+</table>

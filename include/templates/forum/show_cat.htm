@@ -1,0 +1,24 @@
+<table width="100%" class="table  table-bordered table-hover">
+{EXPLODE}<tr class="active">
+	  <td colspan="5"><b><i class="fa fa-angle-double-down"></i> <a href="index.php?forum-showcat-{cid}">{cname}</a></b></td>
+	</tr>{EXPLODE}<tr>
+	  <td colspan="5"><strong>&raquo;&nbsp;<a href="index.php?forum-showcat-{cid}">{cname}</a></strong></td>
+	</tr>{EXPLODE}<tr>
+	  <td style="min-width:20px;max-width:20px;padding:2px;vertical-align: middle;text-align:center;"><img alt="" src="include/images/forum/{ORD}.gif" style="min-width:15px;" border="0"></td>
+    <td>
+		  <a href="index.php?forum-showtopics-{id}">{name}</a>
+		  <br>
+			<span style="font-size:0.875em;">{besch}
+			{mods}
+      </span>
+		</td>
+ <td class="text-center hidden-xsmin" style="font-size:0.875em;">{topics} Themen<br>{posts} Beitr&auml;ge</td>
+    <td>
+		  <span">
+				<a rel="tooltip" title="{topicl}" href="index.php?forum-showposts-{tid}-p{page}#{pid}">{topic}</a>
+		    <br>
+			  {_lang_from}: {erst}
+		  </span>
+		</td>
+  </tr>{EXPLODE} 
+</table>

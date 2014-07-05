@@ -1,0 +1,71 @@
+<div class="text-left">{SITELINK}</div>
+<br>
+<table width="100%" class="table table-condensed">
+  <tr> 
+    <td class="text-right">{ANTWORTEN}</td>
+  </tr>
+</table>
+<table width="100%" class="table  table-bordered">
+    <legend><i class="fa fa-file-text-o"></i> {TOPICNAME}</legend>
+	{EXPLODE}
+  <tr> 
+    <td style="vertikal-align:top;" class="active showpost1"><a name="{id}"></a>{erst}<br /><font class="smalfont">{rang}<span class="avatar">{avatar}</span>{posts}</font></td>
+    <td style="vertikal-align:top;" class="showpost2">
+		  <div style="float: left; width:80%;" ><a href="index.php?forum-showposts-{TID}#{id}" rel="tooltip" title="{i}. Post in diesem Thema"><small><i class="fa fa-link"></i></small></a>&nbsp;<small><i class="fa fa-clock-o"></i> {date} Uhr</small></div>
+      <div style="float: right; width: 20%; text-align:right;">
+<div class="btn-group">
+  <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+    <i class="fa fa-bars"></i>  <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu pull-right text-center" role="menu">
+    {change}
+    <li><a href="index.php?forum-newpost-{TID}-z{id}">{_lang_quote}</a></li>
+    {delete}
+  </ul>
+</div>
+</div>
+      <br />
+      <hr />      
+{txt}
+					        {sig}
+
+		</td>
+  </tr>
+  <tr> 
+    <td colspan="2" height="10" class="text-right"><a href="#" class="top label label-default pull-right"><i class="fa fa-caret-up"></i></a></td>
+  </tr>
+	{EXPLODE}
+</table>
+<table width="100%" class="table table-condensed">
+  <tr> 
+    <td class="text-right">{ANTWORTEN}</td>
+  </tr>
+</table>
+<div class="text-left">{SITELINK}</div>
+{EXPLODE}
+<br>
+<div class="btn-group">
+  <button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown">
+    {_lang_administrattopic}<span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+    <li><a href="javascript:renametopic()">{_lang_rename}</a></li>
+    <li><a href="index.php?forum-edittopic-{tid}-2">{_lang_delete}</a></li>
+    <li><a href="index.php?forum-edittopic-{tid}-3">{_lang_shift}</a></li>
+    <li class="divider"></li>
+    <li><a href="index.php?forum-edittopic-{tid}-4-2">{status}</a></li>
+<li><a href="index.php?forum-edittopic-{tid}-5">{festnorm}</a></li>
+  </ul>
+</div>
+
+<script language="JavaScript" type="text/javascript">
+<!--
+  function renametopic () {
+	  var x = prompt ( "Bitte den neuen Namen vom Thema eintragen" , "" );
+		if ( x ) {
+		  document.location.href="index.php?forum-edittopic-{tid}-1=0&newTopic="+x;
+		}
+	}
+	
+//-->
+</script>

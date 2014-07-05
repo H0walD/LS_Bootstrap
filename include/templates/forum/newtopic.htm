@@ -1,0 +1,56 @@
+<table width="100%" class="table  table-bordered">
+  <tr>
+	  <th colspan="2" height="20" class="active">
+		  <b>{_lang_preview}</b>
+		</th>
+	</tr><tr>
+    <td>{txt}</td>
+  </tr>
+</table>
+<br><br>
+{EXPLODE}
+<script language="JavaScript" type="text/javascript">
+<!--
+  function form_check() {
+	  document.form.submit.disabled = true;
+ 	  document.form.submit.style.background = '#FF0000';
+    document.form.submit.value = '{_lang_send}...';
+    return true;
+	}
+//-->
+</script>
+
+<form action="index.php?forum-newtopic-{fid}" method="POST" name="form" onSubmit="return form_check()" class="form-horizontal" role="form">
+<script type="text/javascript" src="include/includes/js/bbcode.js"></script>
+
+		  <legend>{_lang_writeanewtopic}</legend>
+  <div class="form-group">
+    <label for="eingabefeldfthema" class="col-sm-2 control-label">Thema</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="eingabefeldfthema" placeholder="Titel zum Thema" value="{topic}" maxlength="40" tabindex="1" name="topic">
+    </div>
+  </div>
+{name}
+<table width="100%" class="table  table-bordered">
+  <tr>
+	  <td colspan="2" height="20">
+		  <b>{_lang_writeyourpost}</td>
+		</td>
+	</tr><tr>
+	  <td rowspan="2" valign="top" class="active hidden-xsmin">{SMILIES}</td>
+	  <td>
+      <!-- BB Code START -->{__BBCodeButtons__}<!-- BB Code START -->
+		</td>
+	</tr><tr>
+    <td width="80%" >
+		  <textarea style="width: 98%" cols="75" rows="15" name="txt" class="form-control" tabindex="3">{txt}</textarea>
+    </td>
+  </tr><tr>
+    <td colspan="2"><input id="topic_alert" type="checkbox" value="yes" name="topic_alert" /><label for="topic_alert">&nbsp;&nbsp;{_lang_mailonreply}</a></td>
+</tr></table>
+{antispam}
+<table width="100%" class="table"><tr>
+    <td class="text-right"><input type="submit" class="btn btn-primary btn-sm" name="priview" value="{_lang_preview}" accesskey='v' />&nbsp;<input type="submit" class="btn btn-primary btn-sm" name="submit" value="{_lang_formsub}" accesskey='s' /></td>
+	</tr>
+</table>
+</form>

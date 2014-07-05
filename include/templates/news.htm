@@ -1,0 +1,67 @@
+<div class="media">
+  <a class="pull-left" href="index.php?news-{id}">{kate}</a>
+  <div>
+    <h4><small>{datum}</small><br><a href="index.php?news-{id}"><i class="fa fa-location-arrow"></i></a> {title}<br><small>{_lang_from} {username}</small></h4>
+<br>{text}
+<br>
+<span class="pull-right"><a class="btn btn-primary btn-xs" href="index.php?news-{id}">{kom} {_if_{kom}=='1'}{_lang_comment}{_else_}{_lang_comments}{/_endif} </a>&nbsp;&nbsp;{readwholenews}</span>
+</div>
+</div><hr>
+{EXPLODE}
+<br><center>{SITELINK}</center>
+
+{EXPLODE}
+<!-- News Kommentare und Mehr lesen -->
+<table width="100%" class="table table-bordered">
+    <legend>{NAME}<legend>
+  <tr>
+    <td >{TEXT}</div><br style="clear:both; " />
+      <br><a class="btn btn-primary" href="index.php?news"><b>&laquo;</b> {_lang_back}</a> </td>
+  </tr>
+
+  <tr>
+    <td><small>{_lang_commentsfor} {NAME}</small></td>
+  </tr>
+  <tr>
+    <td>
+
+	    {EXPLODE}
+	    <form action="index.php?news-{NID}" method="POST" class="form-horizontal" role="form">
+        <fieldset>
+          <legend>{_lang_writecomment}</legend>
+          <input type="text" name="name" class="form-control" value="{uname}" /><br>
+          <textarea class="form-control" rows="3" name="txt" placeholder="Kommentar eintragen"></textarea><br />
+<br>{ANTISPAM}<br>
+ <input type="submit"class="btn btn-primary" value="{_lang_enter}"><br >
+        </fieldset>
+      </form>
+      <br>
+      {EXPLODE}
+     <div class="well well-sm">
+      <span class="badge"># {ZAHL}</span> von {NAME}<br>
+      {TEXT}</div>
+
+      {EXPLODE}
+      <br><br>
+      <a class="btn btn-primary" href="index.php?news"><b>&laquo;</b> {_lang_back}</a>
+
+    </td>
+  </tr>
+</table>
+
+{EXPLODE}
+
+<table width="100%" class="table table-bordered">
+  <tr >
+    <td><b>{NAME}</b></td>
+    <td>{FUER}</td>
+    <td align="right">{DATE}</td>
+  </tr><tr>
+    <td valign="top" colspan="2">{TEXT}{MEHR}</td>
+    <td valign="top" rowspan="2" align="center">{KATE}</td>
+  </tr><tr>
+    <td valign="bottom" height="20" colspan="2" align="center">
+      <b>{_lang_from} {UNAME}</b> &nbsp; &nbsp; &nbsp; [ {KOM} <a href="index.php?news-1&amp;nid={ID}">{_lang_comments}</a> ]
+    </td>
+  </tr>
+</table>

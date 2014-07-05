@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{TITLE}</title>
+    <link rel="shortcut icon" href="include/designs/mar_bootstrap_2/img/icon.ico" type="image/x-icon">
+    <link rel="icon" href="include/designs/mar_bootstrap_2/img/icon.ico" type="image/x-icon">
+    <link href="include/designs/mar_bootstrap_2/bootstrap.css" rel="stylesheet">
+    <link href="include/designs/mar_bootstrap_2/bootstrap-theme.css" rel="stylesheet">
+    <link href="include/designs/mar_bootstrap_2/style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//use.edgefonts.net/nova-round.js"></script> 
+    <script src="include/designs/mar_bootstrap_2/js/scroll-top.js"></script>
+    <script type="text/javascript">
+ 
+   $(document).ready(function(){
+ 
+      $('.top').UItoTop();
+   });
+
+  $(function() { 
+  //for bootstrap 3 use 'shown.bs.tab' instead of 'shown' in the next line
+  $('a[data-toggle="tab"]').on('click', function (e) {
+    //save the latest tab; use cookies if you like 'em better:
+    localStorage.setItem('lastTab', $(e.target).attr('href'));
+  });
+
+  //go to the latest tab, if it exists:
+  var lastTab = localStorage.getItem('lastTab');
+
+  if (lastTab) {
+      $('a[href="'+lastTab+'"]').click();
+  }
+});
+   </script>
+
+<!-- Ilch Bootstrap Dateien -->
+
+    <link href="include/bootstrap/ekko-lightbox.css" rel="stylesheet">
+    <link href="include/bootstrap/font-awesome/css/font-awesome.min.css" rel="stylesheet"> 
+    <script src="include/bootstrap/js/bootstrap.js"></script>
+    <script src="include/bootstrap/js/bootstrap.file-input.js"></script>
+    <script src="include/bootstrap/js/ekko-lightbox.js"></script>
+    <script src="include/bootstrap/js/bootstrap-popover.js"></script>
+    <script src="include/bootstrap/js/bootstrap-tooltip.js"></script>
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Navigation ein-/ausblenden</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="btn-success"><a href="index.php">Home</a></li>
+{_list_menunr5@
+        <li class="dropdown btn-success">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">%1 <b class="caret"></b></a>
+          <ul class="dropdown-menu" role="menu">
+            %2
+          </ul>
+        </li>}
+      </ul>
+<ul class="nav navbar-nav navbar-right">
+{_boxes_login2}
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="jumbotron jumbotron-bg">
+      <div class="container">
+<img src="include/designs/mar_bootstrap_2/img/header.png" alt="{SITENAME}">
+      </div>
+    </div>
+<div class="sitename_b"><h3>{SITENAME}</h3></div>
+<div class="container" style="margin-top:-20px;">
+<div id="wrap">
+    <input type="checkbox" class="checkbox_in" id="width_sidebar" role="button">
+    <label for="width_sidebar"><span>hide the sidebar</span><span><i class="fa fa-arrow-right"></i></span><span><i class="fa fa-arrow-left"></i></span></label>    
+    <div role="main"><div class="panel panel-default">
+  <div class="panel-body"><ol class="breadcrumb"><a href="index.php"><b>Start</b></a> &raquo; {HMENU}</ol><br>{EXPLODE}</div></div></div>       
+    <aside role="complimentary">
+<div id="ilch-menus"><div class="btn-group ilch-menus" data-toggle="buttons" id="meinTab">
+  <label class="btn btn-success1 default">
+    <a data-toggle="tab" href="#navi">Menu 1</a>
+  </label>
+  <label class="btn btn-success">
+    <a data-toggle="tab" href="#info">Menu 2</a>
+  </label>
+</div>
+<div class="tab-content">
+  <div class="tab-pane" id="info">
+  {_list_menunr2@<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title text-right">%1 <i class="fa fa-angle-double-down"></i></h3>
+  </div>
+  <div class="panel-body text-center">
+    %2
+  </div>
+</div>}
+</div>
+  <div class="tab-pane  active" id="navi">
+  {_list_menunr1@<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title text-right">%1 <i class="fa fa-angle-double-down"></i></h3>
+  </div>
+  <div class="panel-body text-center">
+    %2
+  </div>
+</div>}
+</div>
+</div></div>
+    </aside>
+<script>
+ $('#meinTab a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
+</script>  
+</div>
+    </div>
+    <div id="footer">
+      <div class="container">
+        <a href="index.php?contact">All Rights by {SITENAME}</a><br class="out_le"><span><a href="http://www.howald-design.ch">H0walD-Design</a> <i class="fa fa-compress"></i> <a href="http://www.ilch.de">cms Ilch.de</a></span>
+      </div>
+    </div>
+  </body>
+</html>
+<!-- {_list_hmenupoint@<li><a target="%1" href="%2">%3</a></li>}
+{_list_hmenubegi@}
+{_list_hmenuende@}
+{_list_vmenupoint@<a class="list-group-item " target="%1" href="%2">%3</a>}
+{_list_vmenubegi@<div class="list-group">}
+{_list_vmenuende@</div>}//-->
+
+
+
