@@ -21,7 +21,7 @@ WHERE ((".$_SESSION['authright']." <= b.view AND b.view < 1)
 	 OR -9 >= ".$_SESSION['authright'].")
 ORDER BY c.time DESC
 LIMIT 0,4";
-echo '<ul class="list-group list-group-boxen text-left">';
+echo '<ul class="list-group list-group-boxen text-left ">';
 $resultID = db_query($query);
 while ($row = db_fetch_assoc($resultID)) {
 	$row['date'] = date('d.m.y - H:i',$row['time']);
